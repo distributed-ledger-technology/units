@@ -23,14 +23,10 @@ testData.push({ from: 'Ether', amount: 1, to: 'Wei', expected: 10000000000000000
 testData.push({ from: 'Wei', amount: 1000000000000000000, to: 'Wei', expected: 1000000000000000000 })
 testData.push({ from: 'Wei', amount: 1000000000000000000, to: 'Kwei', expected: 1000000000000000 })
 
-Deno.test("should convert Ethereum Blockchain Units", () => {
-
-    for (const entry of testData) {
-        const result = UnitConverter.convert(entry.from, entry.amount, entry.to)
-        console.log(result)
-        assertStrictEquals(result, entry.expected, `error while converting ${entry.amount} ${entry.from} to ${entry.to}`)
-
-    }
+for (const entry of testData) {
+    const result = UnitConverter.convert(entry.from, entry.amount, entry.to)
+    console.log(result)
+}
 
 
 ```
