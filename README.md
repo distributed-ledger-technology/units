@@ -31,3 +31,21 @@ for (const entry of testData) {
 
 ```
 
+
+## Usage Examples Bitcoin Unit Converter
+
+```ts
+import { UnitConverter } from "https://deno.land/x/units/mod-bitcoin.ts";
+
+const testData: any[] = []
+testData.push({ from: 'Satoshi', amount: 100000000, to: 'Bitcoin', expected: 1 })
+testData.push({ from: 'Bitcoin', amount: 1, to: 'Satoshi', expected: 100000000 })
+
+for (const entry of testData) {
+    const result = UnitConverter.convert(entry.from, entry.amount, entry.to)
+    console.log(result)
+}
+
+
+```
+
